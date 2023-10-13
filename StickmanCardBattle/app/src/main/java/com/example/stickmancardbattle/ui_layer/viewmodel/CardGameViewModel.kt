@@ -26,7 +26,6 @@ class CardGameViewModel(
     private val _followerBackRight = MutableStateFlow<Card?>(null)
     val followerBackRight:StateFlow<Card?> = _followerBackRight
 
-
     fun draw(amount:Int) {
         repeat(amount) {
             val topCard = deck.topDeck

@@ -9,15 +9,14 @@ open class Card(
     val race: CardRace,
     val cardText: String,
     val imageId: Int,
-    val onPlaceAbility:()-> Unit,
-    var activatedAbility:()-> Unit,
-    var passiveAbility:()-> Unit
-) {}
+    val level: Int
+)
 
 enum class CardType {
     ENTITY,
     ACTION,
-    LOCATION
+    LOCATION,
+    LEADER
 }
 enum class CardRace {
     KNIGHT,
