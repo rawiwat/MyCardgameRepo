@@ -21,5 +21,5 @@ enum class CardType {
 enum class CardRace {
     KNIGHT,
     ORC,
-    DRAGON
+    Magic
 }

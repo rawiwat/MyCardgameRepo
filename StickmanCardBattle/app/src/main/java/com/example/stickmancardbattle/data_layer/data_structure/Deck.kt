@@ -61,7 +61,7 @@ class Deck {
     fun printDeck() {
         var current = topDeck
         while (current != null) {
-            print("${current.card} ")
+            print("${current.card.name}, ")
             current = current.next
         }
         println()
@@ -86,17 +86,15 @@ class Deck {
         }
     }
 
-    fun search(card: Card): CardInDeck? {
+    fun search(card: Card): Card? {
         var current = topDeck
 
         while (current != null) {
-            if (current.card == card) {
-                return current
+            if (current.card.id == card.id) {
+                return current.card
             }
             current = current.next
         }
-
         return null
     }
-
 }

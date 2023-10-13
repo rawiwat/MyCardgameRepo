@@ -7,7 +7,7 @@ import com.example.stickmancardbattle.domain_layer.FieldZoneForEntity
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
-class CardGameViewModel(
+class CardZoneViewModel(
     cardList: List<Card>,
     chosenLeader: Card
 ) :ViewModel() {

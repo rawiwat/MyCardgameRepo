@@ -31,18 +31,19 @@ import com.example.stickmancardbattle.R
 import com.example.stickmancardbattle.data_layer.model.Card
 import com.example.stickmancardbattle.data_layer.model.CardType
 import com.example.stickmancardbattle.data_layer.model.knight.TheKing
-import com.example.stickmancardbattle.ui_layer.viewmodel.CardGameViewModel
+import com.example.stickmancardbattle.ui_layer.viewmodel.CardOnFieldViewModel
+import com.example.stickmancardbattle.ui_layer.viewmodel.CardZoneViewModel
 
 @Composable
 fun Board(
-    cardGameViewModel: CardGameViewModel,
+    cardZoneViewModel: CardZoneViewModel,
 ) {
-    val leader = cardGameViewModel.leader
-    val followerFrontLeft by cardGameViewModel.followerFrontLeft.collectAsState()
-    val followerFrontRight by cardGameViewModel.followerFrontRight.collectAsState()
-    val followerBackLeft by cardGameViewModel.followerBackLeft.collectAsState()
-    val followerBackCenter by cardGameViewModel.followerBackCenter.collectAsState()
-    val followerBackRight by cardGameViewModel.followerBackRight.collectAsState()
+    val leader = cardZoneViewModel.leader
+    val followerFrontLeft by cardZoneViewModel.followerFrontLeft.collectAsState()
+    val followerFrontRight by cardZoneViewModel.followerFrontRight.collectAsState()
+    val followerBackLeft by cardZoneViewModel.followerBackLeft.collectAsState()
+    val followerBackCenter by cardZoneViewModel.followerBackCenter.collectAsState()
+    val followerBackRight by cardZoneViewModel.followerBackRight.collectAsState()
     EntityOnField(card = leader)
     EntityOnField(card = followerFrontLeft)
     EntityOnField(card = followerFrontRight)
@@ -59,6 +60,7 @@ fun EntityOnField(
     val cardWidth = 87.dp
     val cardHeight = 115.dp
     val statsFont = FontFamily(Font(R.font.impact))
+    val viewModel = CardOnFieldViewModel(card)
     if (card != null) {
         val cardFrame =
             when(card.type) {
