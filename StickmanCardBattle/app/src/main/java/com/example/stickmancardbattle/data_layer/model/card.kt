@@ -8,8 +8,11 @@ open class Card(
     val type: CardType,
     val race: CardRace,
     val cardText: String,
+    val imageId: Int,
     val onPlaceAbility:()-> Unit,
-)
+    var activatedAbility:()-> Unit,
+    var passiveAbility:()-> Unit
+) {}
 
 enum class CardType {
     ENTITY,

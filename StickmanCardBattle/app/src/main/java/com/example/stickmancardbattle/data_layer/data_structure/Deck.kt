@@ -8,9 +8,9 @@ class CardInDeck(val card:Card) {
 }
 
 class Deck {
-    private var topDeck: CardInDeck? = null
-    private var bottomDeck: CardInDeck? = null
-    
+    var topDeck: CardInDeck? = null
+    var bottomDeck: CardInDeck? = null
+
     private fun isEmpty(): Boolean {
         return topDeck == null
     }
@@ -41,9 +41,9 @@ class Deck {
         }
     }
 
-    fun remove(cardInDeck: CardInDeck) {
-        val prevCard = cardInDeck.prev
-        val nextCard = cardInDeck.next
+    fun remove(cardInDeck: CardInDeck?) {
+        val prevCard = cardInDeck?.prev
+        val nextCard = cardInDeck?.next
 
         if (prevCard != null) {
             prevCard.next = nextCard
@@ -85,4 +85,18 @@ class Deck {
             deck.append(card)
         }
     }
+
+    fun search(card: Card): CardInDeck? {
+        var current = topDeck
+
+        while (current != null) {
+            if (current.card == card) {
+                return current
+            }
+            current = current.next
+        }
+
+        return null
+    }
+
 }
