@@ -7,7 +7,7 @@ import com.example.stickmancardbattle.domain_layer.FieldZoneForEntity
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
-class CardZoneViewModel(
+class HandViewModel(
     cardList: List<Card>,
     chosenLeader: Card
 ) :ViewModel() {
@@ -84,6 +84,10 @@ class CardZoneViewModel(
                     _followerBackRight.value = card
                 }
         }
+    }
+
+    fun onSelected() {
+
     }
 
     init {

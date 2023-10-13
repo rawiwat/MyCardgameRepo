@@ -32,11 +32,11 @@ import com.example.stickmancardbattle.data_layer.model.Card
 import com.example.stickmancardbattle.data_layer.model.CardType
 import com.example.stickmancardbattle.data_layer.model.knight.TheKing
 import com.example.stickmancardbattle.ui_layer.viewmodel.CardOnFieldViewModel
-import com.example.stickmancardbattle.ui_layer.viewmodel.CardZoneViewModel
+import com.example.stickmancardbattle.ui_layer.viewmodel.HandViewModel
 
 @Composable
 fun Board(
-    cardZoneViewModel: CardZoneViewModel,
+    cardZoneViewModel: HandViewModel,
 ) {
     val leader = cardZoneViewModel.leader
     val followerFrontLeft by cardZoneViewModel.followerFrontLeft.collectAsState()
@@ -166,7 +166,6 @@ fun EntityOnField(
                             fontFamily = statsFont
                         )
                     }
-
                 }
             }
         }

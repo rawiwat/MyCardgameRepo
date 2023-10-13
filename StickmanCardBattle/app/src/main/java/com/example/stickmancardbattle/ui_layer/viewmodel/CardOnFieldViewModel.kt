@@ -21,9 +21,9 @@ enum class GameStep {
 open class CardOnFieldViewModel(
     thisCard: Card?
 ):ViewModel() {
-    private val _onClick = MutableStateFlow({ })
+    private val _onClick = MutableStateFlow { }
     val onClick:StateFlow<()->Unit> = _onClick
-    fun setOnClick() {
-
+    fun setOnClick(feature:()->Unit) {
+        _onClick.value = feature
     }
 }
